@@ -25,6 +25,10 @@ class WordModel {
       word: word,
       isArabic: isArabic,
       color: color,
+      arabicSimilarWords: arabicSimilarWords,
+      englishSimilarWords: englishSimilarWords,
+      arabicExampels: arabicExampels,
+      englishExampels: englishExampels,
     );
   }
 
