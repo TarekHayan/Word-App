@@ -88,11 +88,7 @@ class WriteDataCubitCubit extends Cubit<WriteDataCubitState> {
     }, "Somthing wrong try again");
   }
 
-void deletExampel(
-    int indexInDataBase,
-    int indexInSimilar,
-    bool isArabic,
-  ) {
+  void deletExampel(int indexInDataBase, int indexInSimilar, bool isArabic) {
     _tryAndCatch(() {
       List<WordModel> words = _getWordsListFromDataBase();
       words[indexInDataBase] = words[indexInDataBase].deletExampelWord(
@@ -101,7 +97,6 @@ void deletExampel(
       );
     }, "Somthing wrong try again");
   }
-
 
   void _tryAndCatch(VoidCallback methoud, String msg) {
     emit(WriteDataCubitLoading());

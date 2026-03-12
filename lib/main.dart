@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:words_app/models/word_type_adapter.dart';
+import 'package:words_app/views/screens/home_screen.dart';
+import 'package:words_app/views/styles/app_thems.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,9 +13,12 @@ void main() async {
 
 class WordsApp extends StatelessWidget {
   const WordsApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false);
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: AppThems.appThems(),
+      home: HomeScreen(),
+    );
   }
 }
