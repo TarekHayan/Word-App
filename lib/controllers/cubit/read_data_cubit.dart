@@ -35,6 +35,7 @@ class ReadDataCubit extends Cubit<ReadDataState> {
       ).cast<WordModel>();
       _removewords(words);
       _applySorting(words);
+      emit(ReadDataSucess(words: words));
     } catch (e) {
       emit(ReadDatafauliar(error: "something Wrong In Get try again later"));
     }

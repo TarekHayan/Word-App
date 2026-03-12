@@ -88,6 +88,12 @@ class WordModel {
     return _getWordAfterCheck(isArabicSimilarWord, newSimilarWords, true);
   }
 
+  WordModel deletExampelWord(int index, bool isArabicSimilarWord) {
+    List<String> exampelWord = _intialaizNewWords(isArabicSimilarWord, false);
+    exampelWord.removeAt(index);
+    return _getWordAfterCheck(isArabicSimilarWord, exampelWord, false);
+  }
+
   WordModel addSimilarWord(String newSimilarWord, bool isArabicSimilarWord) {
     List<String> newSimilarWords = _intialaizNewWords(
       isArabicSimilarWord,
