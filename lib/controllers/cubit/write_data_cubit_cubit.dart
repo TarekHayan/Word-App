@@ -12,7 +12,7 @@ class WriteDataCubitCubit extends Cubit<WriteDataCubitState> {
   final Box box = Hive.box(HiveDetails.boxName);
   String word = "";
   bool isArabic = true;
-  int colorCode = 0xff000000;
+  int colorCode = 0xff62B6CB;
 
   void updateText(String text) {
     word = text;
@@ -24,6 +24,7 @@ class WriteDataCubitCubit extends Cubit<WriteDataCubitState> {
 
   void updateColor(int colorCode) {
     this.colorCode = colorCode;
+    emit(WriteDataCubitInitial());
   }
 
   void addWord() {

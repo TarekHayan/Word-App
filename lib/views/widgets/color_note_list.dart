@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:words_app/controllers/cubit/write_data_cubit_cubit.dart';
 
-class ColorNoteList extends StatefulWidget {
-  const ColorNoteList({super.key});
+class ColorNoteList extends StatelessWidget {
+  const ColorNoteList({super.key, required this.colorCode});
 
-  @override
-  State<ColorNoteList> createState() => _ColorNoteListState();
-}
-
-class _ColorNoteListState extends State<ColorNoteList> {
-  int colorCode = 0xff62B6CB;
+  final int colorCode;
 
   final List<int> _colors = const [
     0xff62B6CB,
@@ -35,10 +32,9 @@ class _ColorNoteListState extends State<ColorNoteList> {
             padding: const EdgeInsets.symmetric(horizontal: 5),
             child: GestureDetector(
               onTap: () {
-                if (colorCode != _colors[index]) {
-                  colorCode = _colors[index];
-                  setState(() {});
-                }
+                BlocProvider.of<WriteDataCubitCubit>(
+                  context,
+                ).updateColor(_colors[index]);
               },
 
               child: ColorNoteItem(
