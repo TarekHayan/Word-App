@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:words_app/views/widgets/color_note_list.dart';
 import 'package:words_app/views/widgets/custom_dialog.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,7 +15,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class _CutomFloatingActionButton extends StatelessWidget {
-  const _CutomFloatingActionButton({super.key});
+  const _CutomFloatingActionButton();
 
   @override
   Widget build(BuildContext context) {

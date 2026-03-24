@@ -32,11 +32,13 @@ class ColorNoteList extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 5),
             child: GestureDetector(
               onTap: () {
-                BlocProvider.of<WriteDataCubitCubit>(
-                  context,
-                ).updateColor(_colors[index]);
+                if (BlocProvider.of<WriteDataCubitCubit>(context).colorCode !=
+                    _colors[index]) {
+                  BlocProvider.of<WriteDataCubitCubit>(
+                    context,
+                  ).updateColor(_colors[index]);
+                }
               },
-
               child: ColorNoteItem(
                 colorCode: colorCode,
                 indexColor: _colors[index],
