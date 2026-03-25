@@ -21,13 +21,11 @@ class WriteDataCubitCubit extends Cubit<WriteDataCubitState> {
   void updateLanguage(bool isArabic) {
     this.isArabic = isArabic;
     emit(WriteDataCubitInitial());
-    print(isArabic);
   }
 
   void updateColor(int colorCode) {
     this.colorCode = colorCode;
     emit(WriteDataCubitInitial());
-    print(colorCode);
   }
 
   void addWord() {
@@ -52,6 +50,7 @@ class WriteDataCubitCubit extends Cubit<WriteDataCubitState> {
       for (int i = indexDataBase; i < words.length; i++) {
         words[i] = words[i].decrementIndexAtDataBase();
       }
+
       box.put(HiveDetails.wordsList, words);
     }, "Somthing wrong try again");
   }
