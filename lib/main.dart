@@ -12,7 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(WordTypeAdapter());
-  Hive.openBox(HiveDetails.boxName);
+  await Hive.openBox(HiveDetails.boxName);
   runApp(WordsApp());
 }
 
