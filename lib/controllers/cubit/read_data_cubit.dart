@@ -37,13 +37,6 @@ class ReadDataCubit extends Cubit<ReadDataState> {
       _removewords(words);
       _applySorting(words);
       emit(ReadDataSucess(words: words));
-      for (int i = 0; i < words.length; i++) {
-        print("-----------------------");
-        print(words[i].indexInDataBase);
-        print(words[i].word);
-        print(words[i].isArabic);
-        print(words[i].color);
-      }
     } catch (e) {
       emit(ReadDatafauliar(error: "something Wrong In Get try again later"));
     }

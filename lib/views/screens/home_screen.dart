@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:words_app/views/widgets/custom_dialog.dart';
 import 'package:words_app/views/widgets/custom_icon_button.dart';
 import 'package:words_app/views/widgets/words_language_filter.dart';
+import 'package:words_app/views/widgets/words_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,6 +20,8 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [WordsLanguageFilter(), CustomFiltersIconButton()],
             ),
+            SizedBox(height: 20),
+            WordsWidget(),
           ],
         ),
       ),

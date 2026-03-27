@@ -12,7 +12,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(WordTypeAdapter());
+
   await Hive.openBox(HiveDetails.boxName);
+
   runApp(WordsApp());
 }
 
@@ -23,7 +25,7 @@ class WordsApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => WriteDataCubitCubit()),
-        BlocProvider(create: (context) => ReadDataCubit()),
+        BlocProvider(create: (context) => ReadDataCubit()..getWords()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

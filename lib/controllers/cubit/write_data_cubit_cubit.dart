@@ -46,11 +46,10 @@ class WriteDataCubitCubit extends Cubit<WriteDataCubitState> {
   void deletWord(int indexDataBase) {
     _tryAndCatch(() {
       List<WordModel> words = _getWordsListFromDataBase();
-      box.deleteAt(indexDataBase);
+      words.removeAt(indexDataBase);
       for (int i = indexDataBase; i < words.length; i++) {
         words[i] = words[i].decrementIndexAtDataBase();
       }
-
       box.put(HiveDetails.wordsList, words);
     }, "Somthing wrong try again");
   }
